@@ -7,8 +7,8 @@ DATETIME=`date +" %F %R"`
 
 THERMAL=`acpi -t | cut -c 15-29`
 
-BATTSTATE=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "state"| cut -c 26-40`
-CHARGE=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage"| cut -c 26-30`
+BATTSTATE=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep "state"| cut -c 26-40`
+CHARGE=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep "percentage"| cut -c 26-30`
 
 #if [ "$CHARGE" == "Discharging" 
 #	]
