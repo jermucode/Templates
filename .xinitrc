@@ -1,5 +1,5 @@
 setxkbmap fi 
-export BROWSER=surf
+export BROWSER=firefox
 export EDITOR=vim
 
 # Loop
@@ -15,5 +15,6 @@ done &
 #pulseaudio &
 xcompmgr &
 
-sh ~/.scripts/wallpaper.sh &
-exec dwm
+#sh ~/.scripts/randomWallpaper/randomWall.sh &
+#wal ~/.scripts/arch2.jpg &
+exec dwm 
