@@ -29,9 +29,11 @@ set number relativenumber
 
 set splitbelow splitright
 
+set clipboard=unnamedplus
+
 "HTML template
 
-nnoremap ,html :-1read $HOME/Templates/vimskeleton.html<CR>
+nnoremap ,html :-1read $HOME/Templates/vimhtml/vimskeleton.html<CR>
 
 filetype plugin indent on
 
@@ -46,6 +48,22 @@ autocmd FileType html inoremap ,d <div></div><Space><Esc>6hi
 autocmd Filetype html inoremap ,s <section></section><Space><Esc>FeT>i
 "empty tags
 autocmd FileType html inoremap ,u <></><Space><Esc>3hi
+
+"latex mappings"
+autocmd FileType tex inoremap ,V \begin{verbatim}\end{verbatim}<Esc>13hi
+autocmd FileType tex inoremap ,i \textit{}<Esc>i
+autocmd FileType tex inoremap ,v \verb 
+
+"C-programming
+"Create main and usual libraries
+autocmd FileType c nnoremap ,main :-1read $HOME/Templates/vim_c/main.c<CR>
+"Create comment tags
+autocmd FileType c inoremap ,c /* */<Esc>hi
+"for loop
+autocmd FileType c inoremap ,f for()<CR>{<CR><CR>}<Esc>3k4li
+"while loop
+autocmd FileType c inoremap ,w while()<CR>{<CR><CR>}<Esc>3k6li
+
 
 
 set showcmd
