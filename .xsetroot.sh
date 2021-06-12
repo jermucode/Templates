@@ -20,14 +20,21 @@ CHARGE=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep "percentag
 
 
 IPLENGTH=`ip -4 addr | grep inet | grep wlan0 | cut -c 4-20 | wc -m`
+ETHER=`ip -6 address | awk NR==5,'/inet6/ { print $2 }' |wc -m`
 
 if [ $IPLENGTH == 18 ]
 then
 	#IP=`ip -4 addr | grep inet | grep wlan0 | cut -c 4-20`
-	IP="CONNECTED TO INTERNET"
+	IP="CONNECTED TO WIRELESS"
+elif [ $ETHER == 41 ]
+then
+	IP="CONNECTED TO WIRED"
+
 else
 	IP="NO INTERNET"
 fi
+
+
 
 
 MEM=`free -h | awk '/^Mem:/ {print $3 " / " $2}'`
