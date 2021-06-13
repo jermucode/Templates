@@ -33,7 +33,7 @@ set clipboard=unnamedplus
 
 "HTML template
 
-nnoremap ,html :-1read $HOME/Templates/vimhtml/vimskeleton.html<CR>
+nnoremap ,html :-1read $HOME/Templates/htmlskeleton.html<CR>
 
 filetype plugin indent on
 
